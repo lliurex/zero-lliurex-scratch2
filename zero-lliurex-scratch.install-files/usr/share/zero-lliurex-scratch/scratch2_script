@@ -1,0 +1,77 @@
+#!/bin/bash
+
+ACTION="$1"
+PKG="$2"
+APP_PATH="/var/cache/epi-downloads/"
+PACKAGE_NAME="edu.media.mit.scratch2editor"
+VERSION="Scratch-latest.air"
+LOG_FILE="/root/.appdata/Adobe/AIR/Logs/Install.log"
+ICON_FILE="/opt/AdobeAirApp/Scratch 2/share/META-INF/AIR/edu.media.mit.scratch2editor.desktop"
+MATE_ICON_FILE="/usr/share/mate/applications/"
+DESKTOP="edu.media.mit.scratch2editor.desktop"
+URL_SCRATCH="http://lliurex.net/recursos-edu/misc/"
+
+#Para el control de versiones partimos de que la 437 corresponde a la 900 y asi incrementalmente en ambos casos en el fichero indicado.
+UPDATE_FILE="/opt/AdobeAirApp/Scratch 2/share/META-INF/AIR/application.xml"
+VERSION_ORIG_NUMBER="458.0.1"
+VERSION_LLIUREX_NUMBER="905"
+
+
+case $ACTION in
+
+	testInstall)
+		exit 0
+	;;
+
+	getStatus)
+		case $PKG in
+			scratch2)
+
+				TEST=$( dpkg-query -s $PACKAGE_NAME 2> /dev/null| grep Status | cut -d " " -f 4 )
+				if [ "$TEST" == 'installed' ]; then
+					echo "0"
+				else
+					echo "1"
+				fi
+			;;
+		esac	
+						
+
+	;;
+
+	preInstall)
+#		wget $URL_SCRATCH$VERSION -O ${APP_PATH}/${VERSION}
+#		if [ $? != 0 ]
+#		then
+#			exit 1
+#		fi
+	;;
+
+	installPackage)
+		
+		if [ ! -f  $APP_PATH$VERSION ]; then
+			echo "Your package $VERSION has a problem to download from lliurex.net, please retry again or contact with Lliurex Team at http://mestreacasa.gva.es/web/lliurex/forums" 
+			exit 1
+		fi
+		
+		echo "package $VERSION downloaded, time to install, please wait......."
+		chmod +x $APP_PATH$VERSION
+		LC_ALL=es_ES.UTF-8 /usr/bin/air-helper-installer.py install $APP_PATH$VERSION
+		if [ "$?" = "0" ]; then
+			echo "Your package $VERSION has been installed in your system"
+		else
+			echo "Your package $VERSION has a problem to be installed in your system, please retry again or contact with Lliurex Team at http://mestreacasa.gva.es/web/lliurex/forums"
+			exit 1
+		fi
+	;;
+
+	remove)
+		echo "Removing files..."
+		/usr/bin/air-helper/installer.py remove $VERSION
+
+	;;
+	
+		
+esac
+echo "$PACKAGE_NAME has been installed in your system. $ACTION"
+exit 0	
