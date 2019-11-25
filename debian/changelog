@@ -1,0 +1,36 @@
+zero-lliurex-scratch2 (0.2.4.1) bionic; urgency=medium
+
+  * Fix icon path
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Tue, 02 Jul 2019 14:00:30 +0200
+
+zero-lliurex-scratch (0.2.4) bionic; urgency=medium
+
+  * Add "offline" to desktop name
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Tue, 25 Jun 2019 14:06:55 +0200
+
+zero-lliurex-scratch (0.2.3.1) bionic; urgency=medium
+
+  * Add air-installer as depends
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Thu, 20 Jun 2019 12:05:50 +0200
+
+zero-lliurex-scratch (0.2.3) bionic; urgency=medium
+
+  * Update banner
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Wed, 29 May 2019 11:46:03 +0200
+
+zero-lliurex-scratch (0.2.1) bionic; urgency=medium
+
+  * Force utf8 on air-installer launch
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Wed, 22 May 2019 16:07:10 +0200
+
+zero-lliurex-scratch (0.1) bionic; urgency=medium
+
+  * Initial release. Replaces zero-lliurex-adobeair
+
+ -- Juanma Navarro Mañez <juanma1980@gmail.com>  Tue, 14 May 2019 08:53:21 +0200
+
