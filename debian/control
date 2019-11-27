@@ -9,9 +9,9 @@ Standards-Version: 4.1.2
 Package: zero-lliurex-scratch2
 Architecture: all
 Depends: ${misc:Depends}, epi-gtk, zero-center, air-manager, air-installer, airapps-fixes(>=0.2)
-Provides: zero-lliurex-adobeair, zero-lliurex-scratch
-Conflicts: zero-lliurex-adobeair, zero-lliurex-scratch
-Replaces: zero-lliurex-adobeair, zero-lliurex-scratch
+Provides: zero-lliurex-adobeair
+Conflicts: zero-lliurex-adobeair
+Replaces: zero-lliurex-adobeair
 Description: Scratch offline editor Installer
  Installer for Scratch Offline Editor
 
