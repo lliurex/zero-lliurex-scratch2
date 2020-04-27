@@ -1,3 +1,10 @@
+zero-lliurex-scratch2 (0.4) bionic; urgency=medium
+
+  * Dummy upgrade
+  * Adding empty zero-lliurex-scratch package to safely update
+
+ -- Hector Garcia Huerta <hectorgh@gmail.com>  Mon, 27 Apr 2020 13:53:26 +0200
+
 zero-lliurex-scratch2 (0.2.6) bionic; urgency=medium
 
   * Rebranding zomando

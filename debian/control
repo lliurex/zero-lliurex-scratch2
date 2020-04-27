@@ -15,3 +15,9 @@ Replaces: zero-lliurex-adobeair
 Description: Scratch offline editor Installer
  Installer for Scratch Offline Editor
 
+Package: zero-lliurex-scratch
+Architecture: all
+Depends: ${misc:Depends}
+Description: Deprecated package
+ You can uninstall this. 
+
